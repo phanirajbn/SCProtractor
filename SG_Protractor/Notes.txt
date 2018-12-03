@@ -1,0 +1,13 @@
+Protractor Training: By Phaniraj.
+e2e Testing of ur applications. 
+Protractor is based on JS and performs various features using ES5 and ES6.
+JS programming language is maintained thro stds defined by ECMA. 
+Javascript:
+Simplified programming language. Runs only in a browser..
+The code of Js is placed within the HTML tags. U need an interpretor to interpret the code of the JS and generate the required DOM structure. 
+JS contains lot of global functions that can be used for UR Application UI interaction. alert, Prompt and confirm functions helps in interacting with the user using UI elements.  
+There are many such global functions that can be used for developing dynamic pages in JS....
+
+U create functions in JS if U want to semantically group a set of statements for better modularity. If those statements are repeatedly used in UR Program, u could make it as a function. 
+
+
