@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		var url = 'http://localhost:1235';
+		$(document).ready(function(){
+			$.get(url, (data)=>{
+				var objects = JSON.parse(data);
+				$.each(objects, (i, e)=>{
+					var row = '<tr><td>' + e.Empname;
+					row += '</td><td>' + e.EmpAddress;
+					row += '</td><td>' + e.EmpSalary;
+					row += '</td></tr>';
+					$("table").append(row);
+				})
+			} )
+		});
+	</script>
+</head>
+<body>
+	<h1>Employee Info System</h1>
+	<table border="1">
+		<tr>
+			<th>Employee Name</th>
+			<th>Employee Address</th>
+			<th>Employee Salary</th>
+		</tr>
+	</table>
+</body>
+</html>

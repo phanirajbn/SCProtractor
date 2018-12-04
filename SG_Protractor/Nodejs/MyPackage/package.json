@@ -1,0 +1,16 @@
+{
+  "name": "sg_phani_emprepository",
+  "version": "1.0.0",
+  "description": "Demo in npm for training",
+  "main": "AnonymousModule.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "emp",
+    "phaniraj",
+    "sg"
+  ],
+  "author": "phanirajbn",
+  "license": "ISC"
+}

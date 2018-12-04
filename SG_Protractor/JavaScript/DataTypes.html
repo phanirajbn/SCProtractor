@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Data types</title>
+	<script src="functions.js"></script>
+	<script src="classes.js"></script>
+	<script type="text/javascript">
+		var collection = [];//creating a blank array....
+		/************Different types of data******************
+		function display(){
+		var value = 123.345;
+		document.write(typeof(value) + " is the type<br/>")
+		value = "String data";
+		document.write(typeof(value) +  " is the type<br/>")
+		value = true;
+		document.write(typeof(value) +  " is the type<br/>")
+		value = ["Apple","mango","Orange"];
+		document.write(typeof(value) +  " is the type<br/>")
+		var different =null;//not initialized
+		document.write(typeof(different) +  " is the type<br/>")
+		//undefined vs. null vs. object.
+		}
+		display();
+		*************************************/
+		function getResult(v1, v2, op){
+			switch (op) {
+				case "+":
+					return addFunc(v1, v2);
+					//document.getElementById('spResult').innerText = result
+					//break;
+				case "-":
+					return subFunc(v1, v2);
+					//document.getElementById('spResult').innerText = result
+					//break;
+				case "X":
+					return mulFunc(v1, v2);
+					//document.getElementById('spResult').innerText = result
+					//break;
+				case "/":
+					return divFunc(v1, v2);
+					//break;
+			}
+		}
+		function onInit(){
+			//$('btnResult').addEventListener('click', peformOperation);
+			onElementClick('btnResult', function(){
+				var v1 = $('txtFirstValue').value;
+				var v2 = $('txtSecondValue').value;
+				var op = $("slOperand").value;
+				var result = getResult(v1, v2, op);
+				//instantiating the class as a variable(object);
+				var op = new operation(v1, v2, op, result);
+				if(collection.length == 5){
+					collection.splice(0, 1);
+				}
+				collection.push(op);//add the operation to the array
+				$("spResult").innerText = result;
+				//$("pHistory").innerText = JSON.stringify(op);
+				$("pHistory").innerHTML = '<tr><th>First Value</th><th>Second value</th><th>Operand</th><th>Result</th></tr>';
+				//iterate to populate it to the table....
+				var latest = collection.reverse();
+				latest.forEach(function(element, index){
+					var row = '<tr><td>' + element.first;
+					row +='</td><td>' + element.second;
+					row +='</td><td>' + element.operand;
+					row +='</td><td>' + element.result;
+					row +='</td></tr>';
+					$("pHistory").innerHTML += row;
+				})	
+			})
+		}
+		window.addEventListener('load', onInit);
+	</script>	
+</head>
+<body>
+	<h1>Math calculator</h1>	
+	<div>
+	<input type="number" required id="txtFirstValue" placeholder="Enter the First Value"/>
+	<select id="slOperand">
+		<option>+</option>
+		<option>-</option>
+		<option>X</option>
+		<option>/</option>
+	</select>
+	<input type="number" id="txtSecondValue" placeholder="Enter the Second Value"/>
+	<button id="btnResult">=</button>
+	<span id="spResult"></span>
+	</div>
+	<div>
+		<h2>History</h2>
+		<table border="1" id="pHistory">
+
+		</table>
+	</div>	
+</body>
+</html>

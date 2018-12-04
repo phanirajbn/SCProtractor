@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sample Code</title>
+</head>
+<body>
+	<h1>Math calculator</h1>
+	<script src="functions.js"></script>	
+	<input type="number" required id="txtFirstValue" placeholder="Enter the First Value"/>
+	<select id="slOperand">
+		<option>+</option>
+		<option>-</option>
+		<option>X</option>
+		<option>/</option>
+	</select>
+	<input type="number" id="txtSecondValue" placeholder="Enter the Second Value"/>
+	<button id="btnResult">=</button>
+	<span id="spResult"></span>
+	<script type="text/javascript">
+		function getResult(first, second, operand){
+			switch (operand) {
+				case "+":
+					return addFunc(first, second);
+					//document.getElementById('spResult').innerText = result
+					//break;
+				case "-":
+					return subFunc(first, second);
+					//document.getElementById('spResult').innerText = result
+					//break;
+				case "X":
+					return mulFunc(first, second);
+					//document.getElementById('spResult').innerText = result
+					//break;
+				case "/":
+					return divFunc(first, second);
+					//break;
+			}
+		}
+		function performOperation(){
+			//get the values entered by the user...
+			var first = parseFloat(document.getElementById('txtFirstValue').value);	
+
+			var second = parseFloat(document.getElementById('txtSecondValue').value);
+
+			var operand = document.getElementById('slOperand').value;//string....
+			var result = getResult(first, second, operand);			
+			document.getElementById('spResult').innerText = result		
+		}
+
+		function onInit(){
+			//find the button object represented by id....
+			var btn = document.getElementById('btnResult');
+			btn.addEventListener('click', performOperation);	
+		}
+		window.addEventListener('load',function(){
+			onInit();
+		});
+	</script>
+</body>
+</html>
