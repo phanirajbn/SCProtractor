@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arrays</title>
+	<script src="common.js"></script>
+</head>
+<body>
+	<h1>List of fruits</h1>
+	<ul id="lstFruits"></ul>	
+	<script src="Arrays.js"></script>
+	<script>
+		var items = getAllFruits();
+		function loadFruits(){
+			$('lstFruits').innerHTML ="";
+			items.forEach(function(e, i){
+				$('lstFruits').innerHTML += '<li>' + e +'<a href="#" class="edit">X</a></li>';	
+			})
+			var anchors = document.getElementsByClassName('edit');
+			for(var i = 0; i < anchors.length;i++){
+			anchors[i].addEventListener('click', function(){
+				debugger;
+				var item = this.parentElement.innerText.replace("X","");
+				var index = items.indexOf(item); 		
+				console.log(index);
+				items.splice(index, 1);
+				loadFruits();
+					})
+			}
+		}
+		
+		window.addEventListener('load', function(){
+			loadFruits();
+		})
+	</script>	
+</body>
+</html>
