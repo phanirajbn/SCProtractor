@@ -1,0 +1,9 @@
+If U want to perform E2E Testing on UR UI Applications, we can go for ProtractorJs framework built on WebDriver and executing using Selenium. It is well tested and usable for Angular based Applications. This could also be used on non angular apps also. It is based on WebdriverJs framework which allows to automate the browser and perform testing on it. It works like a wrapper over the Web driver API which contain methods and operations to perform on native events and browser specific drivers that interact with Web Apps like any normal user would do.
+
+Installing Protractor...
+Install Nodejs from nodejs.org.
+Install Protractor: npm install -g protractor. make UR folder has package.json. webdriver-manager should be updated so that it downloads any new drivers and supports for the browsers.
+start the selenium server by calling: webdriver-manager start.
+Oncce the server starts, U R ready to create folders and the scripts for testing UR interface...
+ 
+

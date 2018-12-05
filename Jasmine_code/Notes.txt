@@ -1,0 +1,13 @@
+Jasmine is a framework for BDD(Behavior Driver development), its a testing framework for JS. It is useful for unit testing UR code and Nodejs Projects. Most of the unit tests of the components are conducted thro Jasmine. U dont need additional support like Mocha to run the Testing environment. Mocha uses a Test runner called Chai to conduct its tests. Jasmine does not need any such additional test runners. 
+BDD is a methodology of developing the software that has a continuous scenario that has to be involved with not only the developers but also quality, user and other business associates. It is helpful for better communication among all of the stake holders of the Application development. 
+jasmine is used in conjunction with Nodejs. 
+U should first install the Nodejs environment...
+Create a package.json in the folder where UR apps are to be tested...npm init
+npm install jasmine-node ->command for installing jasmine
+Run the command: jasmine init 
+This will create the required config file along with the infrastructure required for testing js code...
+
+All the specs of uR testing code should be made available in the spec folder, else U should configure in the jasmine.json file. 
+
+ 
+
