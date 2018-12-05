@@ -1,0 +1,13 @@
+<h1>My Calc program</h1>
+<p>
+	<input type="number" placeholder="Enter v1" [(ngModel)]="first"/>
+	<select [(ngModel)]="operand">
+		<option>+</option>
+		<option>-</option>
+		<option>X</option>
+		<option>/</option>
+	</select> 
+	<input type="number" placeholder="Enter v2" [(ngModel)]="second"/>
+	<button (click) ="process()">=</button>
+	<span>{{result}}</span>
+</p>
